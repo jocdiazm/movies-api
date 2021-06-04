@@ -31,9 +31,13 @@ function moviesApi(app) {
 
     router.get("/:movieId", async function(req,res,next){
         const { movieId} = req.params;
+        //console.log(movieId);
         try {
             //const movies = await Promise.resolve(moviesMock[0])
             const movies = await moviesService.getMovie({movieId})
+
+            console.log(movies)
+
             res.status(200).json({
                 data: movies,
                 message: "movie retrieved"
