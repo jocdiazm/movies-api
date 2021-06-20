@@ -36,7 +36,9 @@ function moviesApi(app) {
             //const movies = await Promise.resolve(moviesMock[0])
             const movies = await moviesService.getMovie({movieId})
 
-            console.log(movies)
+            //console.log(movies)
+
+            //throw new Error('Error getting movies aja')
 
             res.status(200).json({
                 data: movies,
